@@ -9,11 +9,11 @@ model = pickle.load(open('model.pkl','rb'))
 
 # app
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 # routes
-@app.route('/', methods=['POST'])
+@app.route("/api/v1/http://localhost:3000/", methods=['POST'])
 
 def predict():
     # get data
